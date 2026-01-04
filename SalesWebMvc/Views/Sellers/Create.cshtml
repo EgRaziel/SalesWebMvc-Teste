@@ -1,8 +1,48 @@
-﻿
+﻿@model SalesWebMvc.Models.Seller
+@using Microsoft.AspNetCore.Mvc.Rendering
+
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h4
+<h4>Seller</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <fieldset>
+                <div class="form-group">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" placeholder="Enter Name" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email" class="form-label mt-2">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="Enter Email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BirthDate" class="form-label mt-2">Birth Date</label>
+                    <input asp-for="BirthDate" class="form-control" />
+                    <span asp-validation-for="BirthDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label class="form-label mt-2">Base Salary</label>
+                    <div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">$</span>
+                            <input asp-for="BaseSalary" type="text" class="form-control" aria-label="Amount" />
+                            <span asp-validation-for="BaseSalary" class="text-danger"></span>
+                            <span class="input-group-text">.00</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-success mt-2" />
+                </div>
+           </fieldset>
+         </form>
+    </div>
+</div>
