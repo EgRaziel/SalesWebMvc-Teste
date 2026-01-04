@@ -1,0 +1,41 @@
+html[data-bs-theme="dark"] body,
+[data-bs-theme="dark"] body {
+  background-image: none !important;
+  background: var(--bs-body-bg) !important;
+  background-color: var(--bs-body-bg) !important;
+  color: var(--bs-body-color) !important;
+  min-height: 100vh;
+}
+
+/* Força links azuis no tema escuro */
+html[data-bs-theme="dark"],
+[data-bs-theme="dark"] {
+  --bs-link-color: #00ffff;
+  --bs-link-color-rgb: 0, 255, 255;
+  --bs-link-hover-color: #0f56a0;
+  --bs-link-hover-color-rgb: 15, 86, 160;
+}
+
+/* Remove sublinhado para todos os links no tema dark */
+html[data-bs-theme="dark"],
+[data-bs-theme="dark"] {
+  --bs-link-decoration: none;
+}
+
+html[data-bs-theme="dark"] a,
+[data-bs-theme="dark"] a,
+html[data-bs-theme="dark"] a:link,
+[data-bs-theme="dark"] a:link,
+html[data-bs-theme="dark"] a:visited,
+[data-bs-theme="dark"] a:visited,
+html[data-bs-theme="dark"] a:active,
+[data-bs-theme="dark"] a:active,
+html[data-bs-theme="dark"] a:focus,
+[data-bs-theme="dark"] a:focus {
+  text-decoration: none !important;
+}
+
+html[data-bs-theme="dark"] a:hover,
+[data-bs-theme="dark"] a:hover {
+  text-decoration: underline !important;
+}
