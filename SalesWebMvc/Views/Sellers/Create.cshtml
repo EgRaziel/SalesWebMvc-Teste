@@ -50,3 +50,8 @@
          </form>
     </div>
 </div>
+
+<!-- Ativa o JavaScript para a validação pelo lado do cliente (Para mostrar as mensagens de validação conforme o usuário digita)-->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
