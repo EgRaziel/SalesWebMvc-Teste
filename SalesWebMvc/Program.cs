@@ -24,12 +24,12 @@ builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
 // Configuração de localização para en-US
-var enUS = new CultureInfo("en-US");
+var defaultCulture = new CultureInfo("en-US");
 var localizationOptions = new RequestLocalizationOptions
 {
-    DefaultRequestCulture = new RequestCulture(enUS),
-    SupportedCultures = new List<CultureInfo> { enUS },
-    SupportedUICultures = new List<CultureInfo> { enUS }
+    DefaultRequestCulture = new RequestCulture(defaultCulture),
+    SupportedCultures = new List<CultureInfo> { defaultCulture },
+    SupportedUICultures = new List<CultureInfo> { defaultCulture }
 };
 app.UseRequestLocalization(localizationOptions);
 
