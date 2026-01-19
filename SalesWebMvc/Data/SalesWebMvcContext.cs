@@ -14,6 +14,15 @@ namespace SalesWebMvc.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Configura o relacionamento entre SalesRecord e Seller
+            modelBuilder.Entity<SalesRecord>()
+                .HasOne(s => s.Seller)
+                .WithMany(s => s.Sales)
+                .OnDelete(DeleteBehavior.Restrict); // Isso impede a exclusão se houver vendas
+        }
+
         public DbSet<Department> Department { get; set; } = default!;
         public DbSet<Seller> Seller { get; set; } = default!;
         public DbSet<SalesRecord> SalesRecord { get; set; } = default!;
