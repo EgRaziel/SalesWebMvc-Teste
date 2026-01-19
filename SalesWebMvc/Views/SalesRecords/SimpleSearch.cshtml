@@ -5,6 +5,7 @@
 }
 
 <h1>@ViewData["Title"]</h1>
+
 <hr />
 <nav class="navbar navbar-dark bg-dark mb-2 p-3 rounded">
     <form class="container-fluid" role="search">
@@ -64,7 +65,7 @@
                             @Html.DisplayFor(modelItem => item.Id)
                         </td>
                         <td>
-                            @item.Date.ToString("dd/MM/yyyy")
+                            @Html.DisplayFor(modelItem => item.Date)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Seller.Name)
@@ -73,7 +74,7 @@
                             @Html.DisplayFor(modelItem => item.Seller.Department.Name)
                         </td>
                         <td>
-                            @item.Amount.ToString("C2")
+                            @Html.DisplayFor(modelItem => item.Amount)
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Status)
